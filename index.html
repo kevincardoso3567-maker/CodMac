@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodMac - Automatize Excel, CMD e PowerShell</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Header 100% largura -->
+<header>
+    <div class="header-grid">
+        <div class="logo">
+            <img src="CD.png" alt="Logo CodMac" class="logo-img">
+        </div>
+        <nav>
+            <a href="index.html" class="active">HOME</a>
+            <a href="VBA.html">VBA</a>
+            <a href="#">CMD</a>
+            <a href="#">POWERSHELL</a>
+            <a href="#">SOBRE</a>
+            <!-- Botão OS: Inativo (futuro modo pago) -->
+            <a href="#" class="btn-os-inativo">OS</a>
+            <!-- Botão Perfil: Dropdown funcional -->
+            <a href="#" class="btn-perfil" id="btn-perfil">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Dropdown do Perfil -->
+    <div class="profile-dropdown" id="profile-dropdown">
+        <ul>
+            <li><a href="#">Meu Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Conteúdo com margem 80px -->
+<div class="container">
+    <main>
+        <div class="grid">
+
+            <!-- Título Principal -->
+            <h1>Bem-vindo(a) ao <span class="highlight">CodMac</span></h1>
+
+            <!-- Hero Section -->
+            <div class="hero">
+                <p class="hero-text">
+                    O seu <strong>centro de automações</strong> para Excel, CMD e PowerShell.  
+                    Aprenda, copie e aplique macros e scripts com <strong>um clique</strong>.
+                </p>
+                <div class="hero-actions">
+                    <a href="VBA.html" class="btn-primary">
+                        Explorar VBA
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        Ver Todas as Categorias
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cards de Destaque -->
+            <div class="featured-cards">
+
+                <!-- Card 1: VBA -->
+                <div class="featured-card">
+                    <div class="icon-bg vba">
+                        <i class="fas fa-file-excel"></i>
+                    </div>
+                    <h3>Excel VBA</h3>
+                    <p>Macros prontas para automatizar planilhas, relatórios e tarefas repetitivas.</p>
+                    <a href="VBA.html" class="card-link">Acessar Macros</a>
+                </div>
+
+                <!-- Card 2: CMD -->
+                <div class="featured-card">
+                    <div class="icon-bg cmd">
+                        <i class="fas fa-terminal"></i>
+                    </div>
+                    <h3>CMD</h3>
+                    <p>Comandos poderosos para gerenciar arquivos, redes e sistemas via Prompt.</p>
+                    <a href="#" class="card-link disabled">Em breve</a>
+                </div>
+
+                <!-- Card 3: PowerShell -->
+                <div class="featured-card">
+                    <div class="icon-bg ps">
+                        <i class="fab fa-windows"></i>
+                    </div>
+                    <h3>PowerShell</h3>
+                    <p>Scripts avançados para administração de sistemas Windows com segurança.</p>
+                    <a href="#" class="card-link disabled">Em breve</a>
+                </div>
+
+            </div>
+
+            <!-- Seção de Benefícios -->
+            <div class="benefits">
+                <h2>Por que usar o CodMac?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <i class="fas fa-bolt"></i>
+                        <h4>Rápido</h4>
+                        <p>Copie e aplique em segundos.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Seguro</h4>
+                        <p>Códigos testados e comentados.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-video"></i>
+                        <h4>Visual</h4>
+                        <p>Vídeos explicativos inclusos.</p>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="fas fa-users"></i>
+                        <h4>Comunitário</h4>
+                        <p>Contribua com suas automações.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</div>
+
+<!-- Footer 100% largura – LIMPO E MÍNIMO -->
+<footer>
+    <div class="footer-grid">
+        <!-- Rodapé vazio -->
+    </div>
+</footer>
+
+<!-- Botão Voltar ao Topo -->
+<button onclick="topFunction()" id="btn-topo" title="Voltar ao Topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="index.js"></script>
+</body>
+</html>

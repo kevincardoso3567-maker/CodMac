@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodMac - Centro de VBA</title>
+    <link rel="stylesheet" href="VBA.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Header 100% largura -->
+<header>
+    <div class="header-grid">
+        <div class="logo">
+            <img src="CD.png" alt="Logo CodMac" class="logo-img">
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="#" class="active">VBA</a>
+            <a href="#">CMD</a>
+            <a href="#">POWERSHELL</a>
+            <a href="#">SOBRE</a>
+            <a href="#" class="btn-os-inativo">OS</a>
+            <a href="#" class="btn-perfil" id="btn-perfil">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Dropdown do Perfil -->
+    <div class="profile-dropdown" id="profile-dropdown">
+        <ul>
+            <li><a href="#">Meu Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Conteúdo com margem 80px -->
+<div class="container">
+    <main>
+        <div class="grid">
+
+            <h1>Bem-vindo(a) ao Centro de VBA!</h1>
+
+            <div class="intro">
+                <p>Este portal é o seu novo aliado para dominar o VBA no Excel. Projetado para ser intuitivo e eficaz, ele permite que <strong>qualquer pessoa aprenda, teste e aplique macros de forma prática e rápida</strong>.</p>
+                <ul>
+                    <li>Macros prontas para automatizar tarefas comuns.</li>
+                    <li>Vídeos demonstrativos para aprendizado visual.</li>
+                    <li>Instruções detalhadas para uso seguro e eficiente.</li>
+                    <li>Botões “Copiar Código”: Inteligentes para aplicar direto no Excel.</li>
+                </ul>
+                <p>Nosso objetivo é desmistificar o VBA, tornando-o acessível e divertido. Prepare-se para multiplicar sua produtividade!</p>
+            </div>
+
+            <!-- Barra de Pesquisa -->
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="macro-search" class="search" placeholder="Buscar por macro (ex: linhas vazias, email, cor alternada)...">
+            </div>
+
+            <!-- Cards de Macros -->
+            <div class="cards" id="macros-container">
+
+                <!-- Macro 1: Ordem Alfabética -->
+                <div class="card macro-item" data-search="ordem alfabética sort organizar">
+                    <h2>Automação de Ordem Alfabética</h2>
+                    <p class="card-desc">Macro que organiza grandes dados cadastrais em ordem alfabética com um único clique.</p>
+
+                    <div class="demonstracao">
+                        <p>Demonstração (Vídeo Interativo):</p>
+                        <div class="video-container">
+                            <video controls poster="ordemIMG.png" preload="none">
+                                <source src="Macro ordem alfabetica - Excel 2025-11-01 13-40-19.mp4" type="video/mp4">
+                                Seu navegador não suporta a reprodução do vídeo.
+                            </video>
+                        </div>
+                    </div>
+
+                    <div class="codigo-vba-wrapper">
+                        <button class="toggle-code-btn" data-target="macro-ordem-alfabetica">
+                            Mostrar Código VBA
+                        </button>
+                        <pre id="macro-ordem-alfabetica" class="codigo-vba">Sub ORDEM_ALFABETICA_EDIT() 'nome da macro
+
+' ORDEM_ALFABETICA Macro
+
+    Range("K2:O26").Select    'selecione a sua tabela até onde sua planilha termina incluindo cabeçalho
+    ActiveWorkbook.Worksheets("teste").Sort.SortFields.Clear            'selecione o nome da sua planilha e mude nas linhas em ("teste").
+    ActiveWorkbook.Worksheets("teste").Sort.SortFields.Add2 Key:= _
+        Range("K3:K26"), SortOn:=xlSortOnValues, Order:=xlAscending, DataOption:= _
+        xlSortNormal ':selecione a sua tabela somente os dados da sua primeira coluna
+    With ActiveWorkbook.Worksheets("teste").Sort
+        .SetRange Range("K2:O26") 'selecione a sua tabela até onde sua planilha termina incluindo cabeçalho
+        .Header = xlYes
+        .MatchCase = False
+        .Orientation = xlTopToBottom
+        .SortMethod = xlPinYin
+        .Apply
+    End With
+End Sub</pre>
+                    </div>
+
+                    <div class="macro-actions">
+                        <div class="favorite-counter">
+                            <button class="btn-favorite" data-macro="macro-ordem-alfabetica">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="favorite-count" data-macro="macro-ordem-alfabetica-count">0</span>
+                        </div>
+                        <button class="btn-copiar" data-code="macro-ordem-alfabetica">
+                            Copiar Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Macro 2: Remover Linhas Vazias -->
+                <div class="card macro-item" data-search="remover linhas vazias limpar excluir">
+                    <h2>Remover Linhas Vazias em uma Seleção</h2>
+                    <p class="card-desc">Otimize suas planilhas eliminando linhas completamente vazias dentro de um intervalo selecionado.</p>
+
+                    <div class="codigo-vba-wrapper">
+                        <button class="toggle-code-btn" data-target="macro-remover-vazias">
+                            Mostrar Código VBA
+                        </button>
+                        <pre id="macro-remover-vazias" class="codigo-vba">Sub RemoverLinhasVazias()
+    Dim Rng As Range
+    Dim LastRow As Long
+    Dim i As Long
+
+    ' Comentário: Sempre defina a seleção para segurança
+    On Error Resume Next
+    Set Rng = Selection
+    On Error GoTo 0
+
+    If Rng Is Nothing Then
+        MsgBox "Selecione um intervalo para remover linhas vazias.", vbExclamation
+        Exit Sub
+    End If
+
+    Application.ScreenUpdating = False
+    Application.Calculation = xlCalculationManual ' Desabilita cálculo para performance
+
+    LastRow = Rng.Rows.Count
+
+    For i = LastRow To 1 Step -1
+        ' Verifica se todas as células na linha estão vazias
+        If Application.WorksheetFunction.CountA(Rng.Rows(i)) = 0 Then
+            Rng.Rows(i).Delete
+        End If
+    Next i
+
+    Application.Calculation = xlCalculationAutomatic 
+    Application.ScreenUpdating = True
+
+    MsgBox "Linhas vazias removidas com sucesso na seleção!", vbInformation, "Sucesso!"
+End Sub</pre>
+                    </div>
+
+                    <div class="macro-actions">
+                        <div class="favorite-counter">
+                            <button class="btn-favorite" data-macro="macro-remover-vazias">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <span class="favorite-count" data-macro="macro-remover-vazias-count">0</span>
+                        </div>
+                        <button class="btn-copiar" data-code="macro-remover-vazias">
+                            Copiar Código
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Macro Indisponível -->
+                <div class="card macro-indisponivel">
+                    <i class="fas fa-hourglass-half"></i>
+                    <h2>Mais Macros em Breve!</h2>
+                    <p>Estamos trabalhando para trazer ainda mais automações incríveis para o seu Excel. Volte sempre!</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- Footer 100% largura – LIMPO E MÍNIMO -->
+<footer>
+    <div class="footer-grid">
+        <!-- Rodapé vazio -->
+    </div>
+</footer>
+
+<!-- Botão Voltar ao Topo -->
+<button onclick="topFunction()" id="btn-topo" title="Voltar ao Topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="VBA.js"></script>
+</body>
+</html>
