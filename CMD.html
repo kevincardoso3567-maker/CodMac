@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMD - Comandos Prontos | CodMac</title>
+    <link rel="stylesheet" href="CMD.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <div class="header-grid">
+        <div class="logo">
+            <img src="CD.png" alt="Logo CodMac" class="logo-img">
+        </div>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="VBA.html">VBA</a>
+            <a href="CMD.html" class="active">CMD</a>
+            <a href="#">POWERSHELL</a>
+            <a href="#">SOBRE</a>
+            <a href="#" class="btn-os-inativo">OS</a>
+            <a href="#" class="btn-perfil" id="btn-perfil">
+                <i class="fas fa-user-circle"></i>
+            </a>
+        </nav>
+    </div>
+    <div class="profile-dropdown" id="profile-dropdown">
+        <ul>
+            <li><a href="#">Meu Perfil</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="#">Favoritos</a></li>
+            <li><a href="#">Sair</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="grid">
+
+            <h1>Comandos <span class="highlight">CMD</span></h1>
+
+            <!-- Barra de Busca -->
+            <div class="search-container">
+                <input type="text" id="search-input" class="search" placeholder="Buscar comando... (ex: ipconfig, dir)">
+                <i class="fas fa-search search-icon"></i>
+            </div>
+
+            <!-- Cards de Comandos -->
+            <div class="cards">
+
+                <!-- 1. Abrir algo -->
+                <div class="card" data-cmd="start">
+                    <h2><i class="fas fa-external-link-alt"></i> Abrir algo</h2>
+                    <p class="card-desc">Abre um programa, arquivo ou site.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">START "nome do programa ou URL"</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Análise de conexões -->
+                <div class="card" data-cmd="netstat">
+                    <h2><i class="fas fa-network-wired"></i> Análise de conexões</h2>
+                    <p class="card-desc">Mostra conexões de rede ativas.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">NETSTAT -an</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Backup -->
+                <div class="card" data-cmd="robocopy">
+                    <h2><i class="fas fa-copy"></i> Backup</h2>
+                    <p class="card-desc">Copia arquivos com opções avançadas.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">ROBOCOPY C:\origem D:\destino /MIR</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Cores do CMD -->
+                <div class="card" data-cmd="color">
+                    <h2><i class="fas fa-palette"></i> Cores do CMD</h2>
+                    <p class="card-desc">Muda cor do fundo e texto.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">COLOR 0A</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Detalhes do sistema -->
+                <div class="card" data-cmd="systeminfo">
+                    <h2><i class="fas fa-info-circle"></i> Detalhes do sistema</h2>
+                    <p class="card-desc">Mostra informações completas do PC.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">SYSTEMINFO</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. Drives -->
+                <div class="card" data-cmd="driverquery">
+                    <h2><i class="fas fa-hard-drive"></i> Drives</h2>
+                    <p class="card-desc">Lista drivers instalados.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">DRIVERQUERY -V</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. Eliminação completa -->
+                <div class="card" data-cmd="cipher">
+                    <h2><i class="fas fa-trash-alt"></i> Eliminação completa</h2>
+                    <p class="card-desc">Apaga dados permanentemente.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">CIPHER /w:C:\</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 8. Encerrar programas -->
+                <div class="card" data-cmd="taskkill">
+                    <h2><i class="fas fa-stop"></i> Encerrar programas</h2>
+                    <p class="card-desc">Finaliza processos pelo nome ou PID.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">TASKKILL /IM nome.exe /F</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 9. Escrever texto -->
+                <div class="card" data-cmd="echo">
+                    <h2><i class="fas fa-terminal"></i> Escrever texto</h2>
+                    <p class="card-desc">Exibe mensagem no CMD.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">ECHO Olá, mundo!</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 10. Falha de programa -->
+                <div class="card" data-cmd="shutdown">
+                    <h2><i class="fas fa-power-off"></i> Falha de programa</h2>
+                    <p class="card-desc">Desliga ou reinicia o PC.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">SHUTDOWN /s /t 0</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 11. Número de série do disco -->
+                <div class="card" data-cmd="vol">
+                    <h2><i class="fas fa-hdd"></i> Número de série do disco</h2>
+                    <p class="card-desc">Mostra o serial do volume.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">VOL C:</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 12. Limpar tela -->
+                <div class="card" data-cmd="cls">
+                    <h2><i class="fas fa-eraser"></i> Limpar tela</h2>
+                    <p class="card-desc">Limpa todo o conteúdo do CMD.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">CLS</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 13. Lista de programas -->
+                <div class="card" data-cmd="tasklist">
+                    <h2><i class="fas fa-list"></i> Lista de programas</h2>
+                    <p class="card-desc">Mostra processos em execução.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">TASKLIST</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 14. Navegar pelos códigos -->
+                <div class="card" data-cmd="dir">
+                    <h2><i class="fas fa-folder"></i> Navegar pelos códigos</h2>
+                    <p class="card-desc">Lista arquivos e pastas.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">DIR</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 15. Saber o IP -->
+                <div class="card" data-cmd="ipconfig">
+                    <h2><i class="fas fa-wifi"></i> Saber o IP</h2>
+                    <p class="card-desc">Mostra configurações de rede.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">IPCONFIG</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 16. Tamanho da tela CMD -->
+                <div class="card" data-cmd="mode">
+                    <h2><i class="fas fa-expand-arrows-alt"></i> Tamanho da tela CMD</h2>
+                    <p class="card-desc">Ajusta largura e altura do CMD.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">MODE CON: COLS=120 LINES=40</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 17. Título CMD -->
+                <div class="card" data-cmd="title">
+                    <h2><i class="fas fa-heading"></i> Título CMD</h2>
+                    <p class="card-desc">Muda o título da janela.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">TITLE Meu CMD</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 18. Ver versão do SO -->
+                <div class="card" data-cmd="ver">
+                    <h2><i class="fab fa-windows"></i> Ver versão do SO</h2>
+                    <p class="card-desc">Mostra a versão do Windows.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">VER</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 19. Verificar site -->
+                <div class="card" data-cmd="ping">
+                    <h2><i class="fas fa-globe"></i> Verificar site</h2>
+                    <p class="card-desc">Testa conectividade com site.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">PING google.com</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 20. Verificar site detalhado -->
+                <div class="card" data-cmd="tracert">
+                    <h2><i class="fas fa-route"></i> Rota detalhada</h2>
+                    <p class="card-desc">Mostra caminho até o site.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">TRACERT google.com</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 21. Verificação no sistema -->
+                <div class="card" data-cmd="sfc">
+                    <h2><i class="fas fa-shield-alt"></i> Verificação no sistema</h2>
+                    <p class="card-desc">Escaneia arquivos do sistema.</p>
+                    <div class="codigo-wrapper">
+                        <button class="toggle-code-btn">Ver Código <i class="fas fa-chevron-down"></i></button>
+                        <pre class="codigo">SFC /scannow</pre>
+                    </div>
+                    <div class="actions">
+                        <button class="btn-copiar"><i class="fas fa-copy"></i> Copiar</button>
+                        <div class="favorite">
+                            <button class="btn-fav"><i class="far fa-heart"></i></button>
+                            <span class="fav-count">0</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-grid"></div>
+</footer>
+
+<button onclick="topFunction()" id="btn-topo" title="Voltar ao Topo">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="CMD.js"></script>
+</body>
+</html>
